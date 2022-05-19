@@ -86,10 +86,12 @@ namespace uc1snakeladder
                     }
                 }
                 Console.WriteLine("Player present Position is at {0}\n", position2);
+                Console.WriteLine("No of times die was played to win the game");
 
 
             }
-            Console.WriteLine("Player rolls the dice {0} time to reach Position {1}\n", var, position2);
+            Console.WriteLine("Player rolls the dice {0} time to reach Position {1}\n ", var, position2);
+            
         }
     }
 }
