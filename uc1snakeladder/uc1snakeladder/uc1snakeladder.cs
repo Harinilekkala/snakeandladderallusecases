@@ -8,24 +8,24 @@ namespace uc1snakeladder
 {
     internal class uc1snakeladder
     {
-        int position1 = 0, position2 = 0, count = 0;
+        int position1 = 0, position2 = 0, count = 0, var=0;
         public void Position()
         {
             Console.WriteLine("Initial  position of player is " + position2);
 
         }
         Random random = new Random();
-        public void diceroll()
+        public int diceroll()
         {
             int diceno = random.Next(1, 6);
             Console.WriteLine("dice value of player is " + diceno);
-
+            return diceno;
         }
-        public void checkoption()
+        public  void checkoption(int dice)
             
             
         {
-            int diceNo = random.Next(1, 6);
+            
             switch (random.Next(0, 3))
             {
                 case 0:
@@ -33,10 +33,10 @@ namespace uc1snakeladder
                     Console.WriteLine("Player got noPlay Option");
                     break;
                 case 1:
-                    position2 -= diceNo;
+                    position2 -= dice;
                     break;
                 case 2:
-                    position2 += diceNo;
+                    position2 += dice;
                     break;
                 default:
                     break;
@@ -44,9 +44,41 @@ namespace uc1snakeladder
             Console.WriteLine("dice value of player is{0} with position at {1} ", diceNo, position2);
 
         }
+         
+        
+        public void dicerollgame(int dice)
+        {
+            while (position2 < 100)
+            {
+                switch (random.Next(0, 3))
+                {
+                    case 0:
+                        position2 += 0;
+                        Console.WriteLine("Player got noPlay Option");
+                        break;
+                    case 1:
+                        position2 -= dice;
+                        break;
+                    case 2:
+                        position2 += dice;
+                        break;
+                    default:
+                        break;
+                }
+                if (position2 < 0)
+                {
+                    position2 = 0;
+                }
 
 
 
-
+            }
+            Console.WriteLine("Player rolls the dice {0} time to reach Position {1}\n", var, position2);
+        }
     }
 }
+
+
+
+    
+
