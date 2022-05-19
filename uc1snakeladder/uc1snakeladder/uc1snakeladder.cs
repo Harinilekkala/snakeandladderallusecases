@@ -21,6 +21,29 @@ namespace uc1snakeladder
             Console.WriteLine("dice value of player is " + diceno);
 
         }
+        public void checkoption()
+            
+            
+        {
+            int diceNo = random.Next(1, 6);
+            switch (random.Next(0, 3))
+            {
+                case 0:
+                    position2 += 0;
+                    Console.WriteLine("Player got noPlay Option");
+                    break;
+                case 1:
+                    position2 -= diceNo;
+                    break;
+                case 2:
+                    position2 += diceNo;
+                    break;
+                default:
+                    break;
+            }
+            Console.WriteLine("dice value of player is{0} with position at {1} ", diceNo, position2);
+
+        }
 
 
 
