@@ -14,7 +14,13 @@ namespace uc1snakeladder
             Console.WriteLine("Initial  position of player is " + position2);
 
         }
+        Random random = new Random();
+        public void diceroll()
+        {
+            int diceno = random.Next(1, 6);
+            Console.WriteLine("dice value of player is " + diceno);
 
+        }
 
 
 
