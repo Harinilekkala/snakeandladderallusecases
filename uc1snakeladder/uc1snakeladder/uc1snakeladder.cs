@@ -41,7 +41,7 @@ namespace uc1snakeladder
                 default:
                     break;
             }
-            Console.WriteLine("dice value of player is{0} with position at {1} ", diceNo, position2);
+            Console.WriteLine("dice value of player is{0} with position at {1} ", dice, position2);
 
         }
          
@@ -69,7 +69,23 @@ namespace uc1snakeladder
                 {
                     position2 = 0;
                 }
-
+                if (position2 > 100)
+                {
+                    position2 -= dice;
+                    while (position2 < 100)
+                    {
+                        if (dice == (100 - position2))
+                        {
+                            position2 = 100;
+                            Console.WriteLine("Player Won the Game");
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+                Console.WriteLine("Player present Position is at {0}\n", position2);
 
 
             }
